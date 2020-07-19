@@ -8,7 +8,7 @@ const App = () => {
   const [stepNum, setStepNum] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(squarsArray[stepNum]);
-  console.log(winner);
+
   const player = xIsNext ? "X" : "O";
 
   const handleClick = (i) => {
@@ -32,7 +32,7 @@ const App = () => {
     text = "Next Player: " + player;
   }
 
-  if (!winner && stepNum == 9) {
+  if (!winner && stepNum === 9) {
     text = "ITS A TIE!!!";
   }
   if (winner) {
@@ -46,7 +46,7 @@ const App = () => {
 
       <Board squares={squarsArray[stepNum]} onClick={handleClick} />
       {winner ||
-        (stepNum == 9 && <button onClick={restart}>Restart Game</button>)}
+        (stepNum === 9 && <button onClick={restart}>Restart Game</button>)}
     </React.Fragment>
   );
 };
@@ -60,4 +60,3 @@ const Title = styled.h1`
 const SubTitle = styled.h3`
   text-align: center;
 `;
-
