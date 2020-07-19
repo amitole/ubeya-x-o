@@ -32,7 +32,7 @@ const App = () => {
     text = "Next Player: " + player;
   }
 
-  if (!winner && stepNum === 9) {
+  if (!winner && stepNum == 9) {
     text = "ITS A TIE!!!";
   }
   if (winner) {
@@ -43,10 +43,10 @@ const App = () => {
     <React.Fragment>
       <Title>X / O Game - With Hooks</Title>
       <SubTitle>{text}</SubTitle>
-
       <Board squares={squarsArray[stepNum]} onClick={handleClick} />
-      {winner ||
-        (stepNum === 9 && <button onClick={restart}>Restart Game</button>)}
+      {(winner || stepNum == 9) && (
+        <button onClick={restart}>Restart Game</button>
+      )}
     </React.Fragment>
   );
 };

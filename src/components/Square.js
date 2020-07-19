@@ -18,7 +18,7 @@ export default Square;
 
 const Btn = styled.button`
   background: white;
-  border: none;
+  border: 1px solid blueviolet;
   font-size: 5rem;
   cursor: pointer;
   outline: none;
