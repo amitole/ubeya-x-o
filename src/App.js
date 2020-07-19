@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { calculateWinner } from "./components/Helper";
+import Board from "./components/Board";
+import styled from "styled-components";
 
-function App() {
+
+const App = () => {
+  const [squarsArray, setSquarsArray] = useState([Array(9).fill(null)]);
+  const [stepNum, setStepNum] = useState(0);
+  const [xIsNext, setXisNext] = useState(true);
+  const winner = calculateWinner(squarsArray[stepNum]);
+  const player = xIsNext ? "X" : "O";
+
+  const handleClick = (i) => {
+    const current = squarsArray[stepNum];
+    const squares = [...current];
+    if (winner || squares[i]) return;
+    squares[i] = player;
+    setSquarsArray([...squarsArray, squares]);
+    setStepNum(stepNum + 1);
+    setXisNext(!xIsNext);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Title>X / O Game - With Hooks</Title>
+      <SubTitle>
+        {winner ? "The Winner Is: " + winner : "Next Player: " + player}
+      </SubTitle>
+      <Board squares={squarsArray[stepNum]} onClick={handleClick} />
+    </React.Fragment>
   );
-}
+};
 
 export default App;
+
+const Title = styled.h1`
+  text-align: center;
+`;
+
+const SubTitle = styled.h3`
+  text-align: center;
+`;
+
