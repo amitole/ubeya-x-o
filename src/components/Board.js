@@ -23,12 +23,4 @@ const Container = styled.div`
   /* gap: 1px; */
 `;
 
-const Line = styled.div`
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  z-index: 10;
-  width: 5px;
-  height: 480px;
-  background-color: red;
-`;
+

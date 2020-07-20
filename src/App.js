@@ -34,7 +34,7 @@ const App = () => {
     text = "Next Player: " + player;
   }
 
-  if (!winner && stepNum == 9) {
+  if (!winner && stepNum === 9) {
     text = "ITS A TIE!!!";
   }
   if (winner) {
@@ -47,7 +47,7 @@ const App = () => {
       <SubTitle>{text}</SubTitle>
       {winner && <div className={`win${winner[1]}`}></div>}
       <Board squares={squarsArray[stepNum]} onClick={handleClick} />
-      {(winner || stepNum == 9) && (
+      {(winner || stepNum === 9) && (
         <button onClick={restart}>Restart Game</button>
       )}
     </>
