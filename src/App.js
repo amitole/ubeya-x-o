@@ -38,7 +38,6 @@ const App = () => {
     text = "ITS A TIE!!!";
   }
   if (winner) {
-    console.log(winner);
     text = "The Winner Is: " + winner[0];
   }
 
