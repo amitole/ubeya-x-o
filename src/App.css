@@ -1,0 +1,78 @@
+.win0 {
+  position: relative;
+  top: 85px;
+  left: 12px;
+  z-index: 10;
+  width: 480px;
+  height: 2px;
+  background-color: red;
+}
+.win1 {
+  position: relative;
+  top: 250px;
+  left: 12px;
+  z-index: 10;
+  width: 480px;
+  height: 2px;
+  background-color: red;
+}
+.win2 {
+  position: relative;
+  top: 415px;
+  left: 12px;
+  z-index: 10;
+  width: 480px;
+  height: 2px;
+  background-color: red;
+}
+.win3 {
+  position: relative;
+  top: 250px;
+  left: -155px;
+  z-index: 25;
+  width: 480px;
+  height: 2px;
+  background-color: red;
+  transform: rotate(90deg);
+}
+.win4 {
+  position: relative;
+  top: 250px;
+  left: 10px;
+  z-index: 25;
+  width: 480px;
+  height: 2px;
+  background-color: red;
+  transform: rotate(90deg);
+}
+.win5 {
+  position: relative;
+  top: 250px;
+  left: 175px;
+  z-index: 25;
+  width: 480px;
+  height: 2px;
+  background-color: red;
+  transform: rotate(90deg);
+}
+.win6 {
+  position: relative;
+  top: 252px;
+  left: 0px;
+  z-index: 10;
+  width: 500px;
+  height: 2px;
+  background-color: red;
+  transform: rotate(45deg);
+}
+
+.win7 {
+  position: relative;
+  top: 252px;
+  left: 0px;
+  z-index: 10;
+  width: 500px;
+  height: 2px;
+  background-color: red;
+  transform: rotate(-45deg);
+}

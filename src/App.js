@@ -3,11 +3,13 @@ import { calculateWinner } from "./components/Helper";
 import Board from "./components/Board";
 import styled from "styled-components";
 
+import "./App.css";
+
 const App = () => {
   const [squarsArray, setSquarsArray] = useState([Array(9).fill(null)]);
   const [stepNum, setStepNum] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
-  const winner = calculateWinner(squarsArray[stepNum]);
+  let winner = calculateWinner(squarsArray[stepNum]);
 
   const player = xIsNext ? "X" : "O";
 
@@ -36,18 +38,20 @@ const App = () => {
     text = "ITS A TIE!!!";
   }
   if (winner) {
-    text = "The Winner Is: " + winner;
+    console.log(winner);
+    text = "The Winner Is: " + winner[0];
   }
 
   return (
-    <React.Fragment>
+    <>
       <Title>X / O Game - With Hooks</Title>
       <SubTitle>{text}</SubTitle>
+      {winner && <div className={`win${winner[1]}`}></div>}
       <Board squares={squarsArray[stepNum]} onClick={handleClick} />
       {(winner || stepNum == 9) && (
         <button onClick={restart}>Restart Game</button>
       )}
-    </React.Fragment>
+    </>
   );
 };
 
